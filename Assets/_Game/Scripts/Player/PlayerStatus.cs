@@ -9,17 +9,6 @@ public class PlayerStatus : MonoBehaviour
     public float health;
     [SerializeField]
     float maxHealth;
-    [SerializeField]
-    public float mana;
-    [SerializeField]
-    float maxMana;
-    [SerializeField]
-    public float stamina;
-    [SerializeField]
-    float maxStamina;
-    [SerializeField]
-    float regenTick;
-    Coroutine regen;
 
     [Header("Others")]
     [SerializeField]
@@ -30,32 +19,14 @@ public class PlayerStatus : MonoBehaviour
     FlashEffect flashEffect;
     [SerializeField]
     Image healthBar;
-    [SerializeField]
-    Image manaBar;
-    [SerializeField]
-    Image staminaBar;
 
-    public bool haveMana;
-    public bool haveStamina;
     public event Action OnDeath;
-
-
 
 
 
     private void Start()
     {
         health = maxHealth;
-        mana = maxMana;
-        stamina = maxStamina;
-        haveStamina = true;
-    }
-
-
-
-    private void Update()
-    {
-        manaBar.fillAmount = mana / maxMana;
     }
 
 
@@ -74,6 +45,7 @@ public class PlayerStatus : MonoBehaviour
     {
         health -= 1;
 
+        healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
             PlayerDeath();
@@ -82,35 +54,6 @@ public class PlayerStatus : MonoBehaviour
 
         _animator.SetTrigger("Hurt");
         StartCoroutine(Cooldown());
-        healthBar.fillAmount = health / maxHealth;
-    }
-
-
-
-    public IEnumerator StaminaRegen()
-    {
-        staminaBar.fillAmount = stamina / maxStamina;
-        yield return new WaitForSeconds(1);
-
-        while (stamina < maxStamina)
-        {
-            staminaBar.fillAmount = stamina / maxStamina;
-            stamina += regenTick;
-
-            if(stamina >= 1)
-            {
-                haveStamina = true;
-            }
-
-            if(stamina > maxStamina)
-            {
-                stamina = maxStamina;
-            }
-            Debug.Log(stamina);
-            yield return 0.1f;
-        }
-
-        regen = null;
     }
 
 
@@ -138,7 +81,7 @@ public class PlayerStatus : MonoBehaviour
 
     void PlayerDeath()
     {
-        _animator.SetTrigger("Death");
+        _animator.SetTrigger("Dead");
         Destroy(gameObject, 3);
         OnDeath?.Invoke();
     }
