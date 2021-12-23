@@ -19,6 +19,7 @@ public class PlayerStatus : MonoBehaviour
     FlashEffect flashEffect;
     [SerializeField]
     Image healthBar;
+    [SerializeField] Rigidbody2D rigidbody2D;
 
     public event Action OnDeath;
 
@@ -35,15 +36,21 @@ public class PlayerStatus : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && _canDamage && health > 0)
         {
-            TakeDamage();
+            TakeDamage(1);
+        }
+
+        if (other.CompareTag("EndWall"))
+        {
+            TakeDamage(999);
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
         }
     }
 
 
 
-    void TakeDamage()
+    void TakeDamage(int value)
     {
-        health -= 1;
+        health -= value;
 
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
