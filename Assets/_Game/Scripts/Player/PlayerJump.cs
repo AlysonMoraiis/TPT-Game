@@ -15,25 +15,18 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]
     Rigidbody2D rb2d;
 
-    //int extraJumps = 1;
+    int extraJumps = 1;
 
     void Update()
     {
         //anim.SetBool("isJumping", rb2d.velocity.y != 0);
-
-
-        //else if (extraJumps > 0 && !IsGrounded())
-        //{
-        //    Jump();
-        //}
-
     }
 
     private void FixedUpdate()
     {
         if (IsGrounded())
         {
-            //extraJumps = 1;
+            extraJumps = 1;
             anim.SetBool("isJumping", false);
         }
         else
@@ -47,6 +40,11 @@ public class PlayerJump : MonoBehaviour
         if (IsGrounded())
         {
             rb2d.velocity = Vector2.up * jumpForce;
+        }
+        else if (extraJumps > 0 && !IsGrounded())
+        {
+            rb2d.velocity = Vector2.up * jumpForce;
+            extraJumps -= 1;
         }
     }
 
