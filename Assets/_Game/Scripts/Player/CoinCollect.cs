@@ -3,17 +3,34 @@ using UnityEngine.UI;
 public class CoinCollect : MonoBehaviour
 {
     int score;
+    [SerializeField]
     Text scoreText;
+
+
+
+    private void Start()
+    {
+        score = PlayerPrefs.GetInt("SavedCoin");
+        scoreText.text = "x" + score.ToString();
+    }
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Coin"))
         {
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            Score();
         }
     }
+
+
+
     void Score()
     {
         score += 1;
-        scoreText.text = score.ToString();
+        scoreText.text = "x" + score.ToString();
+        PlayerPrefs.SetInt("SavedCoin", score);
     }
 }

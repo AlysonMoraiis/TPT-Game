@@ -6,7 +6,7 @@ public class ScreenMovement : MonoBehaviour
     Rigidbody2D rb;
     bool moveLeft;
     bool moveRight;
-    float horizontalMove;
+    public float horizontalMove;
     public float speed = 5;
     [SerializeField]
     Animator anim;
