@@ -8,6 +8,7 @@ TagManager:
   - Collisions
   - EndWall
   - Coin
+  - AutomaticPlat
   layers:
   - Default
   - TransparentFX

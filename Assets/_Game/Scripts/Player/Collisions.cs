@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class CoinCollect : MonoBehaviour
+public class Collisions : MonoBehaviour
 {
     int score;
     [SerializeField]
@@ -22,6 +22,23 @@ public class CoinCollect : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Score();
+        }
+    }
+
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("AutomaticPlat"))
+        {
+            this.transform.parent = other.transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("AutomaticPlat"))
+        {
+            this.transform.parent = null;
         }
     }
 
