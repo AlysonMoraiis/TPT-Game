@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698316576991303197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.804, y: -0.129, z: 0}
+  m_LocalPosition: {x: 1.206, y: -0.129, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6698316577700786937}
@@ -74,7 +74,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10071142, y: -0.36137593}
+  m_Offset: {x: 0.1410578, y: -0.06453133}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -85,7 +85,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7037903, y: 1.7227519}
+  m_Size: {x: 0.43018785, y: 1.6492474}
   m_EdgeRadius: 0
 --- !u!1 &6698316577384039514
 GameObject:
@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 6698316577700786939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.2, y: -3.1, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.6, z: 1}
   m_Children:
   - {fileID: 6698316577384039515}
   - {fileID: 6698316576991303194}
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 768e6c04565be72459552105d74f7010, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 0153a0064c21c4b47a1bdcaeeea2e5a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,18 +224,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.102265835, y: -0.33492106}
+  m_Offset: {x: 0.13580465, y: -0.06235516}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5, y: 2.5}
+    oldSize: {x: 1.03125, y: 1.75}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7307997, y: 1.8301579}
+  m_Size: {x: 0.4602648, y: 1.6313112}
   m_EdgeRadius: 0
 --- !u!50 &6698316577700786918
 Rigidbody2D:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669aa679b08aeee4c90628e55eb51448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackRange: 1.51
+  _attackRange: 1.7
   _attackDamage: 1
   _attackRate: 2
   _attackPoint: {fileID: 6698316576991303194}

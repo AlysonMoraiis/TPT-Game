@@ -32,7 +32,7 @@ public class NextLevelTrigger : MonoBehaviour
 
     public void RestartAlllevels()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Level 1");
         Time.timeScale = 1f;
     }
 }
