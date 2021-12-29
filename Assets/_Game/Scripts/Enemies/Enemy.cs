@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    [SerializeField]
-    int life = 5;
-    [SerializeField]
-    SpriteRenderer sprite;
+    [SerializeField] int life = 5;
+    [SerializeField] SpriteRenderer sprite;
+    [SerializeField] GameObject explosionRef;
+
+
 
     public void TakeDamage(int attackDamage)
     {
@@ -18,10 +19,18 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
+
+
     void GameObjectDead()
     {
         Destroy(gameObject);
+        GameObject explosion = (GameObject)Instantiate(explosionRef);
+        explosion.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
+
+
 
     IEnumerator DamageFlash()
     {
