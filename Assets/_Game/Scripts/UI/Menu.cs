@@ -7,7 +7,16 @@ public class Menu : MonoBehaviour
 {
     public void ContinueButton()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Level 1");  
         Debug.Log("Continue");
+    }
+
+
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+        Debug.Log("Menu");
     }
 }
