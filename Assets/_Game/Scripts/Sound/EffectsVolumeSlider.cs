@@ -10,7 +10,7 @@ public class EffectsVolumeSlider : MonoBehaviour
 
     void Start()
     {
-        SoundManager.Instance.ChangeEffectsVolume(effectsSlider.value);
-        effectsSlider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeEffectsVolume(val));
+        EffectsManager.Instance.ChangeEffectsVolume(effectsSlider.value);
+        effectsSlider.onValueChanged.AddListener(val => EffectsManager.Instance.ChangeEffectsVolume(val));
     }
 }

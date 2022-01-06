@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void ContinueButton()
+    public void LevelSelector(string level)
     {
-        SceneManager.LoadScene("Level 1");  
-        Debug.Log("Continue");
+        SceneManager.LoadScene(level);  
+    }
+
+
+
+    public void NewGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Level 1");
     }
 
 

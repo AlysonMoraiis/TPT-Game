@@ -10,7 +10,7 @@ public class MusicVolumeSlider : MonoBehaviour
 
     void Start()
     {
-        SoundManager.Instance.ChangeMusicVolume(musicSlider.value);
-        musicSlider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMusicVolume(val));
+        MusicManager.Instance.ChangeMusicVolume(musicSlider.value);
+        musicSlider.onValueChanged.AddListener(val => MusicManager.Instance.ChangeMusicVolume(val));
     }
 }
