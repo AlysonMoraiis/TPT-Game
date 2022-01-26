@@ -34,6 +34,9 @@ public class Collisions : MonoBehaviour
             this.transform.parent = other.transform;
         }
     }
+
+
+
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("AutomaticPlat"))

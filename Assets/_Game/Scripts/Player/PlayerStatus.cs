@@ -2,24 +2,19 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class PlayerStatus : MonoBehaviour
 {
     [Header("Alterables")]
-    [SerializeField]
+    [SerializeField] float maxHealth;
     public float health;
-    [SerializeField]
-    float maxHealth;
 
     [Header("Others")]
-    [SerializeField]
-    Animator _animator;
-    [SerializeField]
-    bool _canDamage = true;
-    [SerializeField]
-    FlashEffect flashEffect;
-    [SerializeField]
-    Image healthBar;
-    [SerializeField] Rigidbody2D rigidbody2D;
+    [SerializeField] Animator _animator;
+    [SerializeField] bool _canDamage = true;
+    [SerializeField] FlashEffect flashEffect;
+    [SerializeField] Image healthBar;
+    [SerializeField] Rigidbody2D rb;
 
     public event Action OnDeath;
 
@@ -42,7 +37,7 @@ public class PlayerStatus : MonoBehaviour
         if (other.CompareTag("EndWall"))
         {
             TakeDamage(999);
-            rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
         }
     }
 

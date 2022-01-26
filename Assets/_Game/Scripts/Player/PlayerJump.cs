@@ -21,6 +21,10 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         //anim.SetBool("isJumping", rb2d.velocity.y != 0);
+        //if (jumped.onClick)
+        //{
+        //    Debug.Log("Pulou");
+        //}
     }
 
 

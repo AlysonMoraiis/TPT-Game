@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3273883833562588121}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.24887085, y: -3.5737305, z: 22.209824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029833d41f769934982499ed888fd2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: e60d3a5f8772558479f140a956b23a91, type: 3}
+  menuClickClip: {fileID: 8300000, guid: e60d3a5f8772558479f140a956b23a91, type: 3}
   _effectsSource: {fileID: 3273883834317459530}
 --- !u!1 &3273883834317459531
 GameObject:

@@ -8,9 +8,11 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource _musicSource;
+    
 
     private void Awake()
     {
+        ChangeMusicVolume(0.5f);
         if (Instance == null)
         {
             Instance = this;
